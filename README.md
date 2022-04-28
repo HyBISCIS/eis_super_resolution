@@ -50,5 +50,4 @@ for cosmarium
   certain algae to do super-resolution on.
 - high_pass_filter.py is a script used to determine which parameters were
   best for the high pass filtering after linear-deconvolution method
-- spatial_resolution.py is a script that was NOT FINISHED for our semiconductor sensor, but
-hopes to demonstrate the spatial-resolution superiority of the linear-deconvolution method over the shift sum method.
+- spatial_resolution.py is a script that was NOT FINISHED for our semiconductor sensor, but hopes to demonstrate the spatial-resolution superiority of the linear-deconvolution method over the shift sum method.
