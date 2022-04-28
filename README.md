@@ -1,10 +1,9 @@
 # EIS Super-Resolution Reconstruction Algorithms
 
-This repo contains code used for the Minerva super-resolution
-paper submitted to TBioCas in March 2022. Many of the scripts
-denoted in the repo are no longer used and are no longer needed. 
-These have been noted below and each file is explained in further
-detail.
+This repo contains code used for performing super-resolution on 
+mutual capacitance images gathered from a regular pixel array of
+impedance sensors.These have been noted below and each file is 
+explained in further detail.
 
 ## Package Requirements
 In order to use this repo, there are certain packages required in order
@@ -51,12 +50,5 @@ for cosmarium
   certain algae to do super-resolution on.
 - high_pass_filter.py is a script used to determine which parameters were
   best for the high pass filtering after linear-deconvolution method
-- spatial_resolution.py is a script that was NOT FINISHED for Minerva, but
+- spatial_resolution.py is a script that was NOT FINISHED for our semiconductor sensor, but
 hopes to demonstrate the spatial-resolution superiority of the linear-deconvolution method over the shift sum method.
-
-### Deprecated Scripts
-- DEPRECATED: algae_superres_1.py, algae_superres_jason.py, ect_linear_deconvolution.py, and plot_lilliput_ECT_4_ifft.py are all old and deprecated scripts that were used to construct the majority of the scripts used for the paper submission. They can be effectively ignored
-- DEPRECATED: Similarly, we can ignore enforce_mirroring.py for the time being since it has yet to be updated to work with the MINERVA chip. 
-- make_super_resolution_plots.py was a script that was not used at all in 
-the making of the paper. It is old code that is not that useful to us.
-
