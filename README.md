@@ -40,9 +40,12 @@ to make everything work correctly. They have been listed below:
   comparing the microscope, reference, and the impedance image.
 - make_three_cosmarium_plots.py is the script used to make the three raw images and three super-resolution cosmarium figure.
 - make_three_pediastrum_plots.py is the script used to make the three raw images and three super-resolution pediastrum figure.
-- show_algae.py was a script used to show off the array of 120 impedance
+- show_algae.py is a script used to show off the array of 120 impedance
 images used in that big 11x11 array. This is for the figure for pediastrum and
 for cosmarium
+- mse_graphs.py is a script used to generate MSE plots from the images gathered in
+  super_res_at_distances.py. It requires running super_res_at_distance.py to first
+  gather the .npy files of the reconstructions.
 
 ### Helpful Scripts
 - find_algae.py is a script used to find algae by comparing the optical

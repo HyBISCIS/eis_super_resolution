@@ -104,8 +104,6 @@ else:
 
 
 
-
-
 # ------------------------ Beginning of Script -----------------------------
 
 # Initialize Composite Images
@@ -133,7 +131,7 @@ print("Window Size:", window2d.shape)
 
 # Obtain Reference Images
 if NUM_LOBES == 2:
-    CENTER = (CENTER[0]-3, CENTER[1]-1)     
+    CENTER = (CENTER[0]-2, CENTER[1])     
 else:
     CENTER = (CENTER[0]+1, CENTER[1])
 

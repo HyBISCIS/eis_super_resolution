@@ -12,6 +12,7 @@ import scipy.signal as sig
 from skimage.transform import warp, PiecewiseAffineTransform
 from skimage.registration import optical_flow_tvl1
 import time
+import math
 
 import deconv_func as func
 
@@ -133,6 +134,11 @@ key_3 = [x for x in sortedkeys if int(mydata[x].attrs[f_name]) == FREQ and int(m
 img_1, mean_1, std_1 = fetch_cropped(mydata, key_1, two_lobe_1)
 img_2, mean_2, std_2 = fetch_cropped(mydata, key_2, two_lobe_2)
 img_3, mean_3, std_3 = fetch_cropped(mydata, key_3, two_lobe_3)
+
+# Get SNR
+avg_snr = (func.get_spatial_snr(img_h_1) +  func.get_spatial_snr(img_h_2) + func.get_spatial_snr(img_h_3)) / 3
+avg_snr_raw = (func.get_spatial_snr(img_1) +  func.get_spatial_snr(img_2) + func.get_spatial_snr(img_3)) / 3
+print(f"Average Raw SNR {avg_snr_raw}, Average Super Resolution SNR {avg_snr}, Difference {avg_snr - avg_snr_raw}")
 
 fig, ax = plt.subplots(2,3, figsize=(10,7))
 ax[0,0].imshow(img_1, cmap='Greys')
