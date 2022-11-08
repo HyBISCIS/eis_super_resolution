@@ -35,17 +35,18 @@ mse11 = np.square(np.subtract(compositeimage11, compositeimage11)).mean()
 
 x = np.asarray([1, 8, 24, 48, 80, 120])
 y = np.asarray([mse1, mse3, mse5, mse7, mse9, mse11])
+y = np.log(y)
 
 
-p0 = (2000, .1, 50) # start with values near those we expect
-params, cv = scipy.optimize.curve_fit(monoExp, x, y, p0)
-m, t, b = params
+# p0 = (2000, .1, 50) # start with values near those we expect
+# params, cv = scipy.optimize.curve_fit(monoExp, x, y, p0)
+# m, t, b = params
 
-# determine quality of the fit
-squaredDiffs = np.square(y - monoExp(x, m, t, b))
-squaredDiffsFromMean = np.square(y - np.mean(y))
-rSquared = 1 - np.sum(squaredDiffs) / np.sum(squaredDiffsFromMean)
-print(f"R² = {rSquared}")
+# # determine quality of the fit
+# squaredDiffs = np.square(y - monoExp(x, m, t, b))
+# squaredDiffsFromMean = np.square(y - np.mean(y))
+# rSquared = 1 - np.sum(squaredDiffs) / np.sum(squaredDiffsFromMean)
+# print(f"R² = {rSquared}")
 
 x_many = np.linspace(1, 120, 120)
 
@@ -55,14 +56,16 @@ plt.figure(2)
 plt.xlabel(r"Number of Images used in Reconstruction")
 plt.ylabel(r"Image MSE")
 plt.scatter(x,y, label='actual', marker='^', linewidth=5)
-plt.plot(x_many, monoExp(x_many, m, t, b), '--', label="fitted")
-plt.annotate("r-squared = {:.3f}".format(rSquared), xy=(75, 0.5))
-plt.annotate("Upsampled 1x1", xy=(6, 0.675))
-plt.annotate("3x3", xy=(12, 0.305))
-plt.annotate("5x5", xy=(23, 0.06))
-plt.annotate("7x7", xy=(45, 0.035))
-plt.annotate("9x9", xy=(75, 0.03))
-plt.annotate("11x11", xy=(110, 0.025))
+print(x)
+print(y)
+# plt.plot(x_many, monoExp(x_many, m, t, b), '--', label="fitted")
+# plt.annotate("r-squared = {:.3f}".format(rSquared), xy=(75, 0.5))
+# plt.annotate("Upsampled 1x1", xy=(6, 0.675))
+# plt.annotate("3x3", xy=(12, 0.305))
+# plt.annotate("5x5", xy=(23, 0.06))
+# plt.annotate("7x7", xy=(45, 0.035))
+# plt.annotate("9x9", xy=(75, 0.03))
+# plt.annotate("11x11", xy=(110, 0.025))
 
 plt.legend()
 plt.show()
